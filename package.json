@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/tayack/googlehome#readme",
   "dependencies": {
+    "ejs": "^3.1.2",
     "google-home-notifier": "^1.2.0",
     "mdns": "^2.5.1"
   }
