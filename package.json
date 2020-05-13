@@ -1,0 +1,23 @@
+{
+  "name": "googlehome",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tayack/googlehome.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/tayack/googlehome/issues"
+  },
+  "homepage": "https://github.com/tayack/googlehome#readme",
+  "dependencies": {
+    "google-home-notifier": "^1.2.0",
+    "mdns": "^2.5.1"
+  }
+}
