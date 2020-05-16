@@ -1,8 +1,11 @@
 module.exports =class {
-    constructor(){
+    constructor(ipaddress,portNo){
         this.googlehome = require('google-home-notifier');
+        this.fs = require('fs');
         this.language = 'ja';
         this.googlehome.device('Google-Home', this.language);
+        this.rootUrl="http://"+ipaddress+":"+portNo;
+
       }
 
      speech(value) {
@@ -11,10 +14,13 @@ module.exports =class {
         });
     }
 
-    command(value) {
-
-        this.googlehome.play('http://192.168.1.12:3000/elephant.mp3', function(res) {
+    speechAnimalVoice() {
+        const allDirents = this.fs.readdirSync('./mp3', { withFileTypes: true });
+        const mp3value=allDirents[Math.floor(Math.random() * allDirents.length)];
+        console.log(this.rootUrl);
+        this.googlehome.play(this.rootUrl +'/'+ mp3value, function(res) {
             console.log(res);
         });
     }
+    
 }

@@ -1,25 +1,22 @@
 const express = require('express');
 const app = express();
 const speech=require('./googleHomeApp.js');
-const speechObj= new speech('');
+const portNo='4000';
+const speechObj= new speech("192.168.1.11",portNo);
 app.use(express.static('mp3'));
 app.use(express.static('public'));
 app.use(express.static('js'));
 app.set("view engine","ejs");
 
 app.get('/speech', (req, res) => {
-
     speechObj.speech(req.query.value);
     res.send('speechOK')
-
 });
 
-app.get('/command', (req, res) => {
-
-    speechObj.command(req.query.value);
-    console.log('end');
-    res.send('commandOK')
+app.get('/animalVoice', (req, res) => {
+    speechObj.speechAnimalVoice();
+    res.send('animalVoice')
 });
 
 
-app.listen(3000, () => console.log('Listening on port 3000'));
+app.listen(portNo, () => console.log('Listening on port '+portNo));
