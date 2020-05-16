@@ -21,6 +21,7 @@ module.exports =class {
         this.googlehome.play(this.rootUrl +'/'+ mp3value, function(res) {
             console.log(res);
         });
+
     }
     
 }
